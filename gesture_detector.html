@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+        <script src="webcam.js"></script>
+        <script src="data.js"></script>
+        
+        <style>
+            button {
+                color: gray;
+                height: 30;
+                width: 100;
+                align-items: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center">
+            <span>
+                <video autoplay playsinline muted id="wc" width="224" height="224"></video>
+            </span>
+            <span id='span2'>
+                <img id="sample_image" style="background-color:gray" width="224" height="224" >
+            </span>
+            <span>
+                <canvas id="canvas" width="224" height="224" style="background-color:gray"></canvas>
+            </span>
+            
+        </div>
+        <div style="text-align: center">
+            <p>Move your hand in different positions of the four gestures</p>
+            <button type="button" id="capture" onclick="capture()">Capture</button>
+            <button type="button" id="start" onclick="start()">Start</button>
+            <button type="button" id="train" onclick="train()">Train</button>
+            <br>
+            <button type="button" onclick="startPrediction()">Start prediction</button>
+            <button type="button" onclick="stopPrediction()">Stop prediction</button>
+            <p id="count">Count:</p>
+            <p id="prediction">Prediction:</p>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>  
